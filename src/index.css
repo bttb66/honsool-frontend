@@ -3,3 +3,28 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@media only screen and (min-width: 767px) {
+  #root {
+    width: 375px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+ol, li {
+  list-style: none;
+}
+
+input {
+  display: block;
+}
+
+}

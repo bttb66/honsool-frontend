@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { 
+import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import { 
+import {
   HomePage,
   MainPage,
   ChatPage
 } from './Routes';
 
 import logo from './logo.svg';
+import './index.css';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <Route 
             exact
             path="/"

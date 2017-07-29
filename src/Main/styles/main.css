@@ -1,0 +1,13 @@
+.main-wrapper {
+  width: 100%; }
+
+.beer-title {
+  text-align: center; }
+
+.beer-image {
+  width: 150px;
+  display: block;
+  margin: 0 auto; }
+
+.beer-contents-wrapper {
+  padding: 0 50px; }
