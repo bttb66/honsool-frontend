@@ -1,0 +1,22 @@
+@import url("./font.scss");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'BMJUAOTF00'; }
+
+@media only screen and (min-width: 767px) {
+  #root {
+    width: 375px;
+    margin: 0 auto; } }
+
+.container {
+  width: 100%; }
+
+.center {
+  text-align: center; }
+
+ol, li {
+  list-style: none; }
+
+input {
+  display: block; }

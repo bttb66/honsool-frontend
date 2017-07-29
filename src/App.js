@@ -11,7 +11,7 @@ import {
 } from './Routes';
 
 import logo from './logo.svg';
-import './index.css';
+import 'styles/index.css';
 
 class App extends Component {
   render() {
