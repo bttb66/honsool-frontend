@@ -5,7 +5,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                홈 페이지 컨테이너입니다.
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qulF9jPMAdI?autoplay=1" frameborder="0"></iframe>
             </div>
         );
     }
