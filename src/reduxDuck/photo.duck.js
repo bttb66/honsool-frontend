@@ -13,17 +13,19 @@ export const sendPhoto = (file) => ({
 const initialState = fromJS({
     requests: {
         sendPhoto: { ...rs.request }
-    }
+    },
+    valid: false
 });
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case `${SEND_PHOTO}_PENDING`:
-            return state.mergeIn(['requests', 'sendPhoto'], ...rs.pending);
+            return state.mergeIn(['requests', 'sendPhoto'], fromJS(rs.pending));
         case `${SEND_PHOTO}_FULFILLED`:
-            return state.mergeIn(['requests', 'sendPhoto'], ...rs.fulfilled);
+            return state.mergeIn(['requests', 'sendPhoto'], fromJS(rs.fulfilled))
+                        .set('valid', true);
         case `${SEND_PHOTO}_REJECTED`:
-            return state.mergeIn(['requests', 'sendPhoto'], ...rs.rejected);
+            return state.mergeIn(['requests', 'sendPhoto'], fromJS(rs.rejected));
         default:
             return state;
     }
