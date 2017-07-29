@@ -10,6 +10,7 @@ import {
 import './styles/main.css';
 
 class MainPage extends Component {
+
     render() {
         return (
             <BeerRecommend>

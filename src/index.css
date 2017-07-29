@@ -22,3 +22,9 @@ body {
 ol, li {
   list-style: none;
 }
+
+input {
+  display: block;
+}
+
+}
