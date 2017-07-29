@@ -38,10 +38,14 @@ class HomePage extends Component {
       console.log(this.props);
         return (
             <div className="center">
-                홈 페이지 컨테이너입니다.
-                <p>
-                  <input type="file" accept="image/*" id="capture" capture="camera" onChange={this.handleChange}/>
-                </p>
+
+
+                <div className="inner-line">
+                    <p>
+                        <input type="file" accept="image/*" id="capture" capture="camera" onChange={this.handleChange}/>
+                    </p>
+                    <div className="black-box"></div>
+                </div>
             </div>
         );
     }
