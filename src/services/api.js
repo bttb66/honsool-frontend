@@ -1,12 +1,16 @@
 import axios from 'axios';
 
-export const api = () => {
-    return axios({
-        method: 'POST',
-        url: ''
-    }).then((result) => {
-        return result;
-    }).catch((err) => {
-        throw err;
-    });
-}
+export const postPicture = (file) => {
+    console.log(file);
+//    return axios({
+//        method: 'POST',
+//        url: 'server/cognitive',
+//        data: {
+//
+//        }
+//    }).then((result) => {
+//        return result;
+//    }).catch((err) => {
+//        throw err;
+//    });
+};
