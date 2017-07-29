@@ -1,7 +1,11 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
+import photo from 'reduxDuck/photo.duck';
+import beer from 'reduxDuck/beer.duck';
 
 const rootReducer = {
+	photo,
+	beer
 };
 
 // const reducer = combineReducers(auth);

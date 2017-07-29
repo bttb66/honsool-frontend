@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <Route
+          <Route 
             exact
             path="/"
             component={HomePage}
