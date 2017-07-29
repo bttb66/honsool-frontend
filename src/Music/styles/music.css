@@ -1,0 +1,29 @@
+.button {
+  margin: 210px auto;
+  display: table; }
+  .button .circle {
+    width: 200px;
+    height: 200px;
+    background: #3a9bdc;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all .5s ease;
+    cursor: pointer; }
+    .button .circle .shape {
+      background: #ecf0f1;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      top: 60px;
+      left: 60px; }
+    .button .circle .stop {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      transition: all .2s ease; }
+    .button .circle .play {
+      -webkit-clip-path: polygon(15% 0, 100% 50%, 100% 50%, 15% 100%);
+      clip-path: polygon(15% 0, 100% 50%, 100% 50%, 15% 100%);
+      transition: all .2s ease; }
+
+.youtube-wrapper {
+  opacity: 0; }

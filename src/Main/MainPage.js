@@ -14,8 +14,10 @@ class MainPage extends Component {
     render() {
         return (
             <BeerRecommend>
-                <BeerTitle />
-                <BeerPhoto />
+                <div className="photo-wrapper">
+                    <BeerTitle />
+                    <BeerPhoto />
+                </div>
                 <BeerContents />
                 <MusicButton />
             </BeerRecommend>

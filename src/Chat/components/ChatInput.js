@@ -19,7 +19,14 @@ class ChatInput extends Component {
     }
 
     handleSubmit() {
+        console.log(this.props.form.get('message'));
+        const { FormActions } = this.props;
         this.props.socket.emit('postChat', this.props.form.get('message'));
+        // FormActions.formChange({
+        //     formName: 'chat',
+        //     name: 'message',
+        //     value: ''
+        // });
     }
 
     render() {

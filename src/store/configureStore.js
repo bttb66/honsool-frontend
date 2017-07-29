@@ -4,12 +4,14 @@ import photo from 'reduxDuck/photo.duck';
 import beer from 'reduxDuck/beer.duck';
 import chat from 'reduxDuck/chat.duck';
 import form from 'reduxDuck/form.duck';
+import player from 'reduxDuck/player.duck';
 
 const rootReducer = {
 	photo,
 	beer,
 	chat,
-	form
+	form,
+	player
 };
 
 // const reducer = combineReducers(auth);
