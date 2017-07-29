@@ -5,9 +5,9 @@ import * as rs from './helpers/requestStatus';
 /* ACTION TYPES */
 const SEND_PHOTO = "photo/SEND_PHOTO";
 
-export const sendPhoto = () => ({
+export const sendPhoto = (file) => ({
     type: SEND_PHOTO,
-    // payload: api.
+    payload: api.postPicture(file)
 });
 
 const initialState = fromJS({
