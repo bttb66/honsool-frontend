@@ -6,6 +6,7 @@ import {
 import {
   HomePage,
   MainPage,
+  MusicPage,
   ChatPage,
   ChatEnterPage
 } from './Routes';
@@ -26,6 +27,10 @@ class App extends Component {
           <Route
             path="/Main"
             component={MainPage}
+          />
+          <Route
+            path="/Music"
+            component={MusicPage}
           />
           <Route
             path="/Chat"

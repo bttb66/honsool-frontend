@@ -1,8 +1,20 @@
 .main-wrapper {
+  font-family: 'Nanum Square';
   width: 100%; }
 
+.photo-wrapper {
+  background-image: url("./main_bg.png");
+  background-size: cover;
+  margin-bottom: -70px;
+  color: white; }
+
 .beer-title {
+  padding: 15px 0;
+  font-weight: 400;
   text-align: center; }
+
+.sub-title {
+  line-height: 0.7em; }
 
 .beer-image {
   width: 150px;
@@ -10,4 +22,89 @@
   margin: 0 auto; }
 
 .beer-contents-wrapper {
-  padding: 0 50px; }
+  position: relative;
+  background-color: white; }
+  .beer-contents-wrapper p {
+    padding: 0 40px;
+    margin: 0; }
+  .beer-contents-wrapper h1.contents-pd {
+    padding: 20px 40px 0 40px;
+    margin-bottom: 10px; }
+  .beer-contents-wrapper .hash-tag {
+    padding-top: 5px;
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 30px; }
+  .beer-contents-wrapper .hr-bar {
+    width: 80%;
+    border-top: 0;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(213, 213, 213, 0.5); }
+  .beer-contents-wrapper .infos {
+    padding: 0 40px; }
+    .beer-contents-wrapper .infos .info-title {
+      font-weight: 600;
+      margin: 30px 0 10px 0; }
+    .beer-contents-wrapper .infos .info {
+      padding: 5px 0; }
+      .beer-contents-wrapper .infos .info .left-text {
+        width: 25%;
+        display: inline-block;
+        vertical-align: middle;
+        color: #888888; }
+      .beer-contents-wrapper .infos .info .right-num {
+        color: #ffc000;
+        width: 74%;
+        display: inline-block;
+        vertical-align: middle; }
+      .beer-contents-wrapper .infos .info .right-bar-wrapper {
+        width: 74%;
+        display: inline-block;
+        background-color: #eeeeee;
+        line-height: 0;
+        vertical-align: middle; }
+        .beer-contents-wrapper .infos .info .right-bar-wrapper .right-bar {
+          display: inline-block;
+          text-align: left;
+          background-color: #ffc000;
+          margin: 0;
+          padding: 0;
+          height: 0.9em; }
+
+.btn:first-child {
+  background-color: #666666;
+  padding: 18px 0 !important; }
+
+.btn {
+  background-color: #555555;
+  font-size: 18px;
+  padding: 20px 0;
+  color: white;
+  border: 0;
+  display: block; }
+
+.contents-pd.anju-title {
+  margin: 30px 0 10px 0;
+  font-weight: 600; }
+
+.anju-wrapper {
+  padding: 15px 40px;
+  margin: 0 auto; }
+  .anju-wrapper .anju-circle:first-child {
+    margin-left: 0; }
+  .anju-wrapper .anju-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    margin-left: 10px;
+    display: inline-block;
+    background-color: gray; }
+  .anju-wrapper #anju1 {
+    background-image: url("../../img/anju1.png");
+    background-size: cover; }
+  .anju-wrapper #anju2 {
+    background-image: url("../../img/anju2.png");
+    background-size: cover; }
+  .anju-wrapper #anju3 {
+    background-image: url("../../img/anju3.png");
+    background-size: cover; }

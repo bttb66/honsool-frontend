@@ -1,3 +1,74 @@
-.center {
-  text-align: center;
-  border: 3px solid green; }
+@charset "UTF-8";
+.home {
+  background-image: url("./main_bg.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  width: 100vw; }
+  .home .center {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    width: 100%; }
+    .home .center .center-inner {
+      display: inline-block;
+      flex-flow: row wrap;
+      text-align: center;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      margin: 30px;
+      padding: 30px 30px 15px 30px; }
+      .home .center .center-inner .title {
+        text-align: center;
+        font-size: 2em;
+        color: #ffffff; }
+      .home .center .center-inner .logo {
+        text-align: center;
+        width: 100%; }
+        .home .center .center-inner .logo img {
+          width: 100%;
+          height: auto; }
+      .home .center .center-inner .slogan {
+        text-align: center;
+        font-size: 2.3em;
+        color: #ffffff;
+        line-height: 0.2em; }
+      .home .center .center-inner .button-wrap {
+        text-align: center; }
+      .home .center .center-inner .filebox label {
+        display: inline-block;
+        padding: .5em 1em;
+        font-size: inherit;
+        line-height: normal;
+        vertical-align: middle;
+        background-color: #fdfdfd;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+        border-bottom-color: #e2e2e2;
+        border-radius: .25em; }
+      .home .center .center-inner .filebox input {
+        /* 파일 필드 숨기기 */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0; }
+  .home .black-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+
+@media only screen and (min-width: 767px) {
+  .center-inner {
+    width: 400px;
+    margin: 0 auto; } }
+
+.copyrighted {
+  font-family: 'Nanum Square';
+  padding-top: 30px;
+  color: white; }

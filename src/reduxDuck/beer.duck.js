@@ -12,7 +12,7 @@ export const getBeerInfo = () => ({
 
 const initialState = fromJS({
     requests: {
-        sendPhoto: { ...rs.request }
+        getBeer: { ...rs.request }
     }
 });
 
