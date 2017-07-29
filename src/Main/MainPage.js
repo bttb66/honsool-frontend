@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
+import {
+    BeerRecommend,
+    BeerTitle,
+    BeerPhoto,
+    BeerContents,
+    MusicButton
+} from './components';
+
 import './styles/main.css';
 
 class MainPage extends Component {
     render() {
         return (
-            <div>
-                메인 페이지 컨테이너입니다.
-            </div>
+            <BeerRecommend>
+                <BeerTitle />
+                <BeerPhoto />
+                <BeerContents />
+                <MusicButton />
+            </BeerRecommend>
         );
     }
 }
