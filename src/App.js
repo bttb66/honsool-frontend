@@ -6,7 +6,8 @@ import {
 import {
   HomePage,
   MainPage,
-  ChatPage
+  ChatPage,
+  ChatEnterPage
 } from './Routes';
 
 import logo from './logo.svg';
@@ -29,6 +30,10 @@ class App extends Component {
           <Route
             path="/Chat"
             component={ChatPage}
+          />
+          <Route
+            path="/ChatEnter"
+            component={ChatEnterPage}
           />
         </div>
       </Router>
