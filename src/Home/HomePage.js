@@ -18,15 +18,19 @@ class HomePage extends Component {
       this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(ev) {
-      this.setState({
-        file: ev
-      })
+    async handleChange(ev) {
+      const { PhotoActions } = this.props;
       console.log(ev.target.files);
       if(ev.target.files.length > 0) {
         // 서버로 보내기
-        this.props.PhotoActions.sendPhoto(ev.target.files[0])
+        try {
+          await PhotoActions.sendPhoto(ev.target.files[0]);
+          
+        } catch (e) {
+          this.props.history.push('/main');
+        }
         // 페이지 이동
+        
       }
     }
 
@@ -45,7 +49,8 @@ class HomePage extends Component {
 
 export default connect(
     state => ({
-      fetching: state.photo.getIn(['requests', 'sendPhoto'])
+      fetching: state.photo.getIn(['requests', 'sendPhoto']),
+      valid: state.photo.get('valid')
     }),
     dispatch => ({
       PhotoActions: bindActionCreators(photo, dispatch)
