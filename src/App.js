@@ -10,12 +10,13 @@ import {
 } from './Routes';
 
 import logo from './logo.svg';
+import './index.css';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <Route 
             exact
             path="/"
