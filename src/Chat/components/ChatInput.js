@@ -6,6 +6,7 @@ class ChatInput extends Component {
 
         this.changeHandler = this.changeHandler.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.enterPressed = this.enterPressed.bind(this);
     }
 
     changeHandler(ev) {
@@ -21,26 +22,39 @@ class ChatInput extends Component {
     handleSubmit() {
         console.log(this.props.form.get('message'));
         const { FormActions } = this.props;
-        this.props.socket.emit('postChat', this.props.form.get('message'));
-        // FormActions.formChange({
-        //     formName: 'chat',
-        //     name: 'message',
-        //     value: ''
-        // });
+        if(this.props.form.get('message') === '') {
+            alert("내용을 입력해주세요!");
+        } else {
+            this.props.socket.emit('postChat', {msg: this.props.form.get('message'), name: this.props.beerInfo !== null ? this.props.beerInfo.name : '카스'});
+            FormActions.formChange({
+                formName: 'chat',
+                name: 'message',
+                value: ''
+            });
+        }
+    }
+
+    enterPressed(e) {
+        if(e.key === 'Enter') {
+            this.handleSubmit();
+        }
     }
 
     render() {
         const {
             changeHandler,
-            handleSubmit
+            handleSubmit,
+            enterPressed
         } = this;
 
         return (
-            <div>
+            <div className="input-wrapper">
                 <input
                     type="text"
                     name="message"
+                    value={this.props.form.get('message')}
                     onChange={changeHandler}
+                    onKeyPress={enterPressed}
                 />
                 <button type="button" onClick={handleSubmit}>전송</button>
             </div>

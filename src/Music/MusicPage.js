@@ -26,6 +26,12 @@ class MusicPage extends Component {
         this.onYoutubeReady = this.onYoutubeReady.bind(this);
     }
 
+    componentDidMount() {
+        if(!this.props.valid) {
+            this.props.history.push('/');
+        }
+    }
+
     togglePlayButton() {
         console.log(this.props);
         if(this.props.playing) {
@@ -57,7 +63,11 @@ class MusicPage extends Component {
                 <div className="exit" onClick={leaveTo}>
                     뒤로가기
                 </div>
-                <Player playing={this.props.playing} onInit={onYoutubeReady} />
+                <div className="music-info">
+                    <p>혼술하는 당신에게 추천하는 오늘의 음악</p>
+                    <p>{this.props.musicList.toJS()[1].artist} - {this.props.musicList.toJS()[1].name}</p>
+                </div>
+                <Player playing={this.props.playing} onInit={onYoutubeReady} videoId={this.props.musicList} />
                 <PlayerButton
                     playing={this.props.playing}
                     togglePlayButton={togglePlayButton}
@@ -71,7 +81,9 @@ class MusicPage extends Component {
 export default connect(
     state => ({
         playing: state.player.get('playing'),
-        player: state.player.get('player')
+        player: state.player.get('player'),
+        musicList: state.photo.get('musicList'),
+        valid: state.photo.get('valid')
     }),
     dispatch => ({
         PlayerActions: bindActionCreators(playerDuck, dispatch)

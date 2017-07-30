@@ -1,13 +1,26 @@
 import React from 'react';
 
-function BeerPhoto() {
-    return (
-        <img
-            src={require('img/miller.jpg')}
-            className="beer-image"
-            alt="밀러"
-        />
-    );
+function BeerPhoto(props) {
+    console.log(props);
+    const photoUrl = require('img/' + props.beerUrl);
+    if(props.beerInfo) {
+        return (
+            <img
+                src={photoUrl}
+                className="beer-image"
+                alt={props.beerInfo.name}
+            />
+        );
+    } else {
+        return (
+            <img
+                src={photoUrl}
+                className="beer-image"
+                alt="밀러"
+            />
+        );
+    }
+
 }
 
 export default BeerPhoto;

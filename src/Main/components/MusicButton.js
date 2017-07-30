@@ -7,7 +7,7 @@ function MusicButton() {
             <Link to="/music" className="btn">
                 지금 이 순간 어울리는 음악
             </Link>
-            <Link to="/chatenter" className="btn">
+            <Link to="/chat" className="btn">
                 혼맥 채팅방 입장
             </Link>
         </div>
