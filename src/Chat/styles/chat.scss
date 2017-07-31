@@ -1,0 +1,138 @@
+//kudos to https://codepen.io/laustdeleuran/pen/DBaAu
+@mixin scrolling-shadows($background-color: rgb(255, 255, 255), $shadow-intensity: 0.3, $shadow-color: rgb(0, 0, 0), $cover-size: 40px, $shadow-size: 14px) {
+    background: // Shadow covers
+            linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, // Shadows
+            radial-gradient(50% 0, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)), radial-gradient(50% 100%, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)) 0 100%;
+    background: // Shadow covers
+            linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, // Shadows
+            radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)), radial-gradient(farthest-side at 50% 100%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: $background-color;
+    background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size;
+    // Opera doesn't support this in the shorthand
+    background-attachment: local, local, scroll, scroll;
+}
+
+//Variables
+$black: #252525;
+$grey: #6f6f6f;
+$lightgrey: #aaa;
+$green: #4BDB9C;
+
+
+.message-list-wrapper {
+    padding: 32px;
+    margin-top: 70px;
+}
+
+.chat-header-wrapper {
+    width: 100%;
+    position: fixed;
+    z-index: 666;
+    top: 0;
+    height: 70px;
+    background-color: #ffc000;
+    span {
+        position: fixed;
+        top: 30px;
+        left: 50px;
+    }
+}
+
+
+//Content
+#content {
+    overflow-y: scroll;
+    max-height: 600px;
+    padding: 1em 2em 0;
+    @include scrolling-shadows(#F4F5F7);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.message-container {
+    margin-bottom: 1em;
+    margin-left: 4em;
+    position: relative;
+}
+
+.pic-container {
+    position: absolute;
+    left: -75px;
+    img,
+    .status {
+        border-radius: 50%;
+        max-width: 60px;
+    }
+    .status {
+        background-color: $green;
+        width: 12px;
+        height: 12px;
+        border: solid 3px white;
+        position: absolute;
+        top: 0;
+    }
+}
+
+h3.name {
+    margin: 0;
+    font-weight: 300;
+    font-size: 100%;
+    color: $black;
+}
+
+.message {
+    background: gray;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.message p {
+    margin: 0;
+    line-height: 180%;
+    font-size: 100%;
+    color: #fff;
+}
+
+.time {
+    text-align: right;
+    font-size: 60%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+    padding-right: 10px;
+    color: $lightgrey;
+}
+
+
+.input-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid black;
+    padding: 5px;
+
+    input {
+        vertical-align: middle;
+        height: 95%;
+        width: calc(80% - 10px);
+        display: inline-block;
+        line-height: 0;
+        /* padding: 10px; */
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+
+    button {
+        border-radius: 10px;
+        border: 1px;
+        margin-left: 5px;
+
+        display: inline-block;
+        width: calc(20% - 10px);
+        height: 100%;
+    }
+}

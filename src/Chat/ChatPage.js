@@ -22,11 +22,26 @@ class ChatPage extends Component {
     componentDidMount() {
         const { ChatActions } = this.props;
         socket.on('getChat', (data) => {
-            console.log(typeof data);
+            console.log(data);
             ChatActions.getMessage({
+                value: data.msg,
+                name: data.name
+            });
+        });
+        socket.on('userNumber', (data) => {
+            ChatActions.setUserNumber({
                 value: data
             });
         });
+
+        if(!this.props.valid) {
+            this.props.history.push('/');
+            alert("사진을 먼저 찍고 접속해주세요!");
+        }
+    }
+
+    componentWillUnmount() {
+        socket.disconnect();
     }
 
     socketInit() {
@@ -34,9 +49,10 @@ class ChatPage extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <Chat>
-                <ChatHeader />
+                <ChatHeader userNumber={this.props.userNumber} /> 
                 <MessageList {...this.props} />
                 <ChatInput {...this.props} socket={socket} />
             </Chat>
@@ -46,8 +62,12 @@ class ChatPage extends Component {
 
 export default connect(
     state => ({
+        valid: state.photo.get('valid'),
         message: state.chat.get('message'),
-        form: state.form.get('chat')
+        name: state.chat.get('name'),
+        userNumber: state.chat.get('userNumber'),
+        form: state.form.get('chat'),
+        beerInfo: state.photo.get('beerInfo')
     }),
     dispatch => ({
         ChatActions: bindActionCreators(chat, dispatch),

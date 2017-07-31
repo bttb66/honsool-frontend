@@ -15,10 +15,15 @@ class Player extends Component {
             }
         };
 
+        console.log(this.props.videoId);
+        const videoId = this.props.videoId.toJS();
+
+        const a = videoId[1].url.split('be');
+        const finalId = a[1].split('/');
         return (
             <div className="youtube-wrapper">
                 <Youtube
-                    videoId={'9pdj4iJD08s'}                  // defaults -> null
+                    videoId={finalId[1] || 'Ckyt1vUOwic'}                  // defaults -> null
                     opts={opts}                        // defaults -> {}
                     onReady={this.props.onInit} 
                 />

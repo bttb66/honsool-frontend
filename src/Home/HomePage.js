@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Spinner from 'Common/Spinner';
 
 import * as photo from 'reduxDuck/photo.duck';
 
@@ -25,19 +26,23 @@ class HomePage extends Component {
         // 서버로 보내기
         try {
           await PhotoActions.sendPhoto(ev.target.files[0]);
-          
+          console.log(this.props);
+          if(this.props.valid) {
+            console.log(this.props);
+            console.log('hi');
+            this.props.history.push('/main');
+          }
         } catch (e) {
-          this.props.history.push('/main');
+          console.log(e);
         }
         // 페이지 이동
-        
       }
     }
 
     render() {
-      console.log(this.props);
         return (
           <div className="home">
+            { this.props.fetching.get('fetching') ? <Spinner /> : undefined }
             <div className="black-box"></div>
               <div className="center">
                 <div className="center-inner">
@@ -58,9 +63,6 @@ class HomePage extends Component {
                       capture="camera"
                       onChange={this.handleChange}
                     />
-                    </div>
-                    <div className="copyrighted">
-                      한잔비어 2017 @ copyrighted
                     </div>
                 </div>
             </div>
